@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	window.onload=function(){
+		var divs=document.getElementsByTagName("div");
+		var imgs=document.getElementsByTagName("img");
+		var arrd=[];
+		var pg=document.documentElement.clientHeight;
+		for (var i = 0; i < divs.length; i++) {
+			arrd.push(divs[i].offsetTop)
+			
+		}
+		// var obj=document.body.scrollTop?document.body:document.documentElement;
+		// var ferg=true;
+		window.onscroll=function(){
+			// if (!ferg) {return};
+			// ferg=false;
+		var obj=document.body.scrollTop?document.body:document.documentElement;
+			var ydjl=obj.scrollTop+pg;
+			for (var j = 0; j < imgs.length; j++) {
+				if (ydjl>arrd[j+1]) {
+					imgs[j].src=imgs[j].title
+				}
+			}
+			// ferg=true;
+			// console.log(arrd)
+		}
+		
+	}
+	</script>
+	<style type="text/css">
+	div{
+		width: 800px;
+		height: 400px;
+		margin: 0 auto;
+	}
+	</style>
+</head>
+<body>
+<div></div>
+	<div><img  src="" title="./image/banner1.jpg"></div>
+	<div><img  src="" title="./image/banner2.jpg"></div>
+	<div><img  src="" title="./image/banner3.jpg"></div>
+	<div><img  src="" title="./image/banner4.jpg"></div>
+	<div><img  src="" title="./image/banner5.jpg"></div>
+</body>
+</html>
